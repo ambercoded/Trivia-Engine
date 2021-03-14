@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3A7DDE0325FE3377006BC8BA /* TriviaEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A7DDDF925FE3377006BC8BA /* TriviaEngine.framework */; };
-		3A7DDE0825FE3377006BC8BA /* TriviaEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7DDE0725FE3377006BC8BA /* TriviaEngineTests.swift */; };
-		3A7DDE0A25FE3377006BC8BA /* TriviaEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A7DDDFC25FE3377006BC8BA /* TriviaEngine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A7DDE1825FE341C006BC8BA /* FlowTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7DDE1725FE341C006BC8BA /* FlowTest.swift */; };
+		3A7DDE1C25FE36FB006BC8BA /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7DDE1B25FE36FB006BC8BA /* Flow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,11 +24,11 @@
 
 /* Begin PBXFileReference section */
 		3A7DDDF925FE3377006BC8BA /* TriviaEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TriviaEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A7DDDFC25FE3377006BC8BA /* TriviaEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TriviaEngine.h; sourceTree = "<group>"; };
 		3A7DDDFD25FE3377006BC8BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A7DDE0225FE3377006BC8BA /* TriviaEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TriviaEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A7DDE0725FE3377006BC8BA /* TriviaEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaEngineTests.swift; sourceTree = "<group>"; };
 		3A7DDE0925FE3377006BC8BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A7DDE1725FE341C006BC8BA /* FlowTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowTest.swift; sourceTree = "<group>"; };
+		3A7DDE1B25FE36FB006BC8BA /* Flow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +71,8 @@
 		3A7DDDFB25FE3377006BC8BA /* TriviaEngine */ = {
 			isa = PBXGroup;
 			children = (
-				3A7DDDFC25FE3377006BC8BA /* TriviaEngine.h */,
 				3A7DDDFD25FE3377006BC8BA /* Info.plist */,
+				3A7DDE1B25FE36FB006BC8BA /* Flow.swift */,
 			);
 			path = TriviaEngine;
 			sourceTree = "<group>";
@@ -80,8 +80,8 @@
 		3A7DDE0625FE3377006BC8BA /* TriviaEngineTests */ = {
 			isa = PBXGroup;
 			children = (
-				3A7DDE0725FE3377006BC8BA /* TriviaEngineTests.swift */,
 				3A7DDE0925FE3377006BC8BA /* Info.plist */,
+				3A7DDE1725FE341C006BC8BA /* FlowTest.swift */,
 			);
 			path = TriviaEngineTests;
 			sourceTree = "<group>";
@@ -93,7 +93,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A7DDE0A25FE3377006BC8BA /* TriviaEngine.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,9 +146,11 @@
 				TargetAttributes = {
 					3A7DDDF825FE3377006BC8BA = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 					3A7DDE0125FE3377006BC8BA = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -194,6 +195,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A7DDE1C25FE36FB006BC8BA /* Flow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A7DDE0825FE3377006BC8BA /* TriviaEngineTests.swift in Sources */,
+				3A7DDE1825FE341C006BC8BA /* FlowTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +342,7 @@
 		3A7DDE0E25FE3377006BC8BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -357,6 +360,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ambercoded.TriviaEngine;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -364,6 +368,7 @@
 		3A7DDE0F25FE3377006BC8BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -388,6 +393,8 @@
 		3A7DDE1125FE3377006BC8BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2J59QZU6T2;
@@ -399,6 +406,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ambercoded.TriviaEngineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -406,6 +414,8 @@
 		3A7DDE1225FE3377006BC8BA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2J59QZU6T2;
