@@ -3,32 +3,26 @@
 
 import Foundation
 
-// Flow doesnt care what the actual Router is implemented like (DIP)
-protocol Router {
-    // An associated type gives a placeholder name to a type that’s used as part of the protocol.
-    associatedtype Question: Hashable
-    associatedtype Answer
-
-    func routeTo(question: Question, answerCallback: @escaping (Answer) -> Void)
-    func routeTo(result: [Question: Answer])
-}
-
 // only allow routers that have the same question and answer type
-class Flow<Question: Hashable, Answer, R: Router> where R.Question == Question, R.Answer == Answer {
+// enforce the Router's Question and Answer generic types match
+// the Flow's Question and Answer generic types
+class Flow<Question, Answer, R: Router> where R.Question == Question, R.Answer == Answer {
     private let router: R
     private let questions: [Question]
-    private var result: [Question: Answer] = [:]
+    private var answers: [Question: Answer] = [:]
+    private var scoring: ([Question: Answer]) -> Int // scoring closure is passed in (not the flows task)
 
-    init(questions: [Question], router: R) {
+    init(questions: [Question], router: R, scoring: @escaping ([Question: Answer]) -> Int) {
         self.questions = questions
         self.router = router
+        self.scoring = scoring
     }
 
     func start() {
         if let firstQuestion = questions.first {
             router.routeTo(question: firstQuestion, answerCallback: nextCallback(from: firstQuestion))
         } else { // no questions
-            router.routeTo(result: result)
+            router.routeTo(result: result())
         }
     }
 
@@ -38,7 +32,7 @@ class Flow<Question: Hashable, Answer, R: Router> where R.Question == Question, 
 
     private func routeNext(_ question: Question, _ answer: Answer) {
         if let currentQuestionIndex = questions.firstIndex(of: question) {
-            result[question] = answer // set the answer for the question before routing
+            answers[question] = answer // set the answer for the question before routing
 
             let nextQuestionIndex = currentQuestionIndex + 1
             let nextQuestionExists = nextQuestionIndex < questions.count
@@ -46,9 +40,12 @@ class Flow<Question: Hashable, Answer, R: Router> where R.Question == Question, 
                 let nextQuestion = questions[nextQuestionIndex]
                 router.routeTo(question: nextQuestion, answerCallback: nextCallback(from: nextQuestion))
             } else {
-                router.routeTo(result: result)
+                router.routeTo(result: result())
             }
         }
+    }
 
+    private func result() -> Result<Question, Answer> {
+        return Result(answers: answers, score: scoring(answers))
     }
 }
