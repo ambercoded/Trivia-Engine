@@ -3,7 +3,7 @@
 
 import Foundation
 
-protocol Router {
+public protocol Router {
     // An associated type gives a placeholder name to a type that’s used as part of the protocol.
     associatedtype Question: Hashable
     associatedtype Answer

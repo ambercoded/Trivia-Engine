@@ -12,6 +12,9 @@
 		3A7DDE1C25FE36FB006BC8BA /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7DDE1B25FE36FB006BC8BA /* Flow.swift */; };
 		3AA829B52600C2CE001A8EA7 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA829B42600C2CE001A8EA7 /* Result.swift */; };
 		3AA829B92600C2FD001A8EA7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA829B82600C2FD001A8EA7 /* Router.swift */; };
+		3AA829BD2600C4FD001A8EA7 /* GameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA829BC2600C4FD001A8EA7 /* GameTest.swift */; };
+		3AA829C32600C5FE001A8EA7 /* RouterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA829C22600C5FE001A8EA7 /* RouterSpy.swift */; };
+		3AA829C72600C625001A8EA7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA829C62600C625001A8EA7 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,8 +34,11 @@
 		3A7DDE0925FE3377006BC8BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A7DDE1725FE341C006BC8BA /* FlowTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowTest.swift; sourceTree = "<group>"; };
 		3A7DDE1B25FE36FB006BC8BA /* Flow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
-		3AA829B42600C2CE001A8EA7 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Result.swift; path = TriviaEngine/Result.swift; sourceTree = "<group>"; };
-		3AA829B82600C2FD001A8EA7 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Router.swift; path = TriviaEngine/Router.swift; sourceTree = "<group>"; };
+		3AA829B42600C2CE001A8EA7 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		3AA829B82600C2FD001A8EA7 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		3AA829BC2600C4FD001A8EA7 /* GameTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTest.swift; sourceTree = "<group>"; };
+		3AA829C22600C5FE001A8EA7 /* RouterSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterSpy.swift; sourceTree = "<group>"; };
+		3AA829C62600C625001A8EA7 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +63,6 @@
 		3A7DDDEF25FE3377006BC8BA = {
 			isa = PBXGroup;
 			children = (
-				3AA829B82600C2FD001A8EA7 /* Router.swift */,
-				3AA829B42600C2CE001A8EA7 /* Result.swift */,
 				3A7DDDFB25FE3377006BC8BA /* TriviaEngine */,
 				3A7DDE0625FE3377006BC8BA /* TriviaEngineTests */,
 				3A7DDDFA25FE3377006BC8BA /* Products */,
@@ -78,6 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				3A7DDDFD25FE3377006BC8BA /* Info.plist */,
+				3AA829B82600C2FD001A8EA7 /* Router.swift */,
+				3AA829B42600C2CE001A8EA7 /* Result.swift */,
 				3A7DDE1B25FE36FB006BC8BA /* Flow.swift */,
 			);
 			path = TriviaEngine;
@@ -88,6 +94,9 @@
 			children = (
 				3A7DDE0925FE3377006BC8BA /* Info.plist */,
 				3A7DDE1725FE341C006BC8BA /* FlowTest.swift */,
+				3AA829C22600C5FE001A8EA7 /* RouterSpy.swift */,
+				3AA829C62600C625001A8EA7 /* Game.swift */,
+				3AA829BC2600C4FD001A8EA7 /* GameTest.swift */,
 			);
 			path = TriviaEngineTests;
 			sourceTree = "<group>";
@@ -212,6 +221,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A7DDE1825FE341C006BC8BA /* FlowTest.swift in Sources */,
+				3AA829BD2600C4FD001A8EA7 /* GameTest.swift in Sources */,
+				3AA829C32600C5FE001A8EA7 /* RouterSpy.swift in Sources */,
+				3AA829C72600C625001A8EA7 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
